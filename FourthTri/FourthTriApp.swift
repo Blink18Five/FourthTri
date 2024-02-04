@@ -9,9 +9,15 @@ import SwiftUI
 
 @main
 struct FourthTriApp: App {
+    @State private var isFirstTime: Bool = true
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if isFirstTime {
+                OnBoardingScreenContentView(firstTime: $isFirstTime)
+            } else {
+                ContentView()
+            }
         }
     }
 }
