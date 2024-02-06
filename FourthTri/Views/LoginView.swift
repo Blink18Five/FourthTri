@@ -65,15 +65,17 @@ struct LoginView: View {
                 Text("or")
                     .italic()
                     .font(.system(size: 18))
-                ButtonView {
-                    
-                } buttonLabel: {
+                NavigationLink(destination: ContentView()) {
                     HStack {
                         Image(systemName: "apple.logo")
                         Text("Continue with Apple")
                             .font(.system(size: 21))
                             .bold()
                     }
+                    .frame(width: 343, height: 54)
+                    .foregroundStyle(.white)
+                    .background(Color("tertiary"))
+                    .clipShape(RoundedRectangle(cornerRadius: 8.0))
                 }
                 NavigationLink(destination: ContentView().navigationBarBackButtonHidden()) {
                     Text("Continue without logging in")
