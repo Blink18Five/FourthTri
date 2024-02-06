@@ -65,14 +65,16 @@ struct LoginView: View {
                 Text("or")
                     .italic()
                     .font(.system(size: 18))
-                ButtonView {
-                    
-                } buttonLabel: {
-                    HStack {
-                        Image(systemName: "apple.logo")
-                        Text("Continue with Apple")
-                            .font(.system(size: 21))
-                            .bold()
+                NavigationLink(destination: ContentView()) {
+                    ButtonView {
+                        
+                    } buttonLabel: {
+                        HStack {
+                            Image(systemName: "apple.logo")
+                            Text("Continue with Apple")
+                                .font(.system(size: 21))
+                                .bold()
+                        }
                     }
                 }
                 NavigationLink(destination: ContentView().navigationBarBackButtonHidden()) {
@@ -110,15 +112,6 @@ struct LoginView: View {
         }
     }
 }
-
-//struct ErrorMessage: View {
-//    var title: String = ""
-//    var message: String = ""
-//    
-//    var body: some View {
-//        Alert(title: Text(title), message: Text(message))
-//    }
-//}
 
 struct ButtonView<Label> : View where Label : View {
     var action: () -> Void

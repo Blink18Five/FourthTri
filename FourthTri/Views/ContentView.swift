@@ -30,11 +30,12 @@ struct ContentView: View {
                     Text("Packages")
                 }
                 .tag(3)
-            Profile()
+            ProfileView()
                 .tabItem {
                     Image(systemName: "person.circle")
                     Text("Profile")
                 }
+                .tag(4)
             
         }
     }

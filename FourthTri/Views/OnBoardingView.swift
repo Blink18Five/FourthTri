@@ -37,7 +37,7 @@ struct OnBoardingScreenContentView: View {
 struct FirstOnBoardingScreen: View {
     var body: some View {
         VStack {
-            Text("Welcome to\nFourthTri")
+            Text("Welcome to\nFourth Tri")
                 .multilineTextAlignment(.center)
                 .font(.system(size: 30))
                 .bold()
@@ -45,7 +45,14 @@ struct FirstOnBoardingScreen: View {
                 .resizable()
                 .frame(width: 302, height: 291.65)
                 .padding()
-            Text("Providing you with the tools,\nresources, and support you need\nto navigate this phase with\nstrength and resilience.")
+            Text(
+                """
+                Providing you with the tools,
+                resources, and support you need
+                to navigate this phase with
+                strength and resilience.
+                """
+            )
                 .multilineTextAlignment(.center)
                 .italic()
                 .font(.system(size: 19))
@@ -61,7 +68,18 @@ struct SecondOnBoardingScreen: View {
                 .resizable()
                 .frame(width: 302, height: 241.5)
                 .padding()
-            Text("Access therapy, counseling, or\nsupport groups, we're here to help\nyou find the right resources.\nConnect with other mothers, share\nyour thoughts, ask questions, and\nfind understanding in our\nsupportive community. You're not\nalone — let's face this together")
+            Text(
+                """
+                Access therapy, counseling, or
+                support groups, we're here to help
+                you find the right resources.
+                Connect with other mothers, share
+                your thoughts, ask questions, and
+                find understanding in our
+                supportive community. You're not
+                alone — let's face this together
+                """
+            )
                 .multilineTextAlignment(.center)
                 .italic()
                 .font(.system(size: 19))
@@ -79,7 +97,16 @@ struct ThirdOnBoardingScreen: View {
                 .resizable()
                 .frame(width: 302, height: 406)
                 .padding()
-            Text("Keep track of your mood, activities,\nand self-care routines. This\npersonalized tracker can help you\nidentify patterns, celebrate small\nvictories, and navigate your unique\njourney towards recovery.")
+            Text(
+                """
+                Keep track of your mood, activities,
+                and self-care routines. This
+                personalized tracker can help you
+                identify patterns, celebrate small
+                victories, and navigate your unique
+                journey towards recovery.
+                """
+            )
                 .multilineTextAlignment(.center)
                 .italic()
                 .font(.system(size: 19))
