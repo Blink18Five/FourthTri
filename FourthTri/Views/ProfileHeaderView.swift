@@ -39,6 +39,9 @@ struct ProfileRectangleSection: View {
 }
 
 struct ProfileHeaderView: View {
+    var name: String
+    var email: String
+    
     var body: some View {
         VStack {
             
@@ -48,13 +51,17 @@ struct ProfileHeaderView: View {
                 .overlay(
                     Circle()
                         .stroke(Color.powderpink, lineWidth: 2)
+                        .overlay {
+                            Image(systemName: "person.fill")
+                                .font(.system(size: 80))
+                        }
                         
                 )
             
-            Text("Leah Smith")
+            Text(name)
                 .font(.title)
                 .fontWeight(.medium)
-            Text("leahsmith02@gmail.com")
+            Text(email)
             
             HStack {
                 ProfileRectangleSection(RectangleImage: "trophy", RectangleTitle:
@@ -80,5 +87,5 @@ Title
 }
 
 #Preview {
-    ProfileHeaderView()
+    ProfileHeaderView(name: "Leah", email: "leah.smith@gmail.com")
 }

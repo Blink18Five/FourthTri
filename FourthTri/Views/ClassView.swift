@@ -15,7 +15,8 @@ struct ClassesView: View {
 
 struct FeaturedClassesView: View {
     var body: some View {
-        FeaturedScrollView(element: "Classes", elementName: "Class Name", elementDescription:  "description description description\ndescription description description\ndescription description ...") {
+        FeaturedScrollView(element: "Classes", elementName: "Class Name", elementDescription:  "description description description\ndescription description description\ndescription description ...") 
+        {
             ClassesView()
         }
     }

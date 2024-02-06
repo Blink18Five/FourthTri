@@ -18,7 +18,7 @@ struct Profile: View {
             
             Spacer()
             
-            ProfileHeaderView()
+            ProfileHeaderView(name: "Leah", email: "leah.smith@gmail.com")
             
             ProfileOptionButton(listIcon: "person.circle", listTitle: "Edit/Settings") {
                 
