@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B43B4B32B71426D00251F5B /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B43B4B22B71426D00251F5B /* ProfileHeaderView.swift */; };
+		2B43B4B52B72865200251F5B /* ProfileOptionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B43B4B42B72865200251F5B /* ProfileOptionButton.swift */; };
 		9603C42C2B6F42C400769EDE /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9603C42B2B6F42C400769EDE /* LoginView.swift */; };
 		9603C42E2B6F530400769EDE /* OnBoardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9603C42D2B6F530400769EDE /* OnBoardingScreen.swift */; };
 		9603C4302B6F657600769EDE /* ForYouView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9603C42F2B6F657600769EDE /* ForYouView.swift */; };
@@ -26,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2B43B4B22B71426D00251F5B /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
+		2B43B4B42B72865200251F5B /* ProfileOptionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOptionButton.swift; sourceTree = "<group>"; };
 		9603C42B2B6F42C400769EDE /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		9603C42D2B6F530400769EDE /* OnBoardingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingScreen.swift; sourceTree = "<group>"; };
 		9603C42F2B6F657600769EDE /* ForYouView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForYouView.swift; sourceTree = "<group>"; };
@@ -112,6 +116,8 @@
 				9603C4312B6F65D100769EDE /* ProgressView.swift */,
 				9603C4332B6F65DF00769EDE /* PackagesView.swift */,
 				9603C4352B6F65E900769EDE /* Profile.swift */,
+				2B43B4B42B72865200251F5B /* ProfileOptionButton.swift */,
+				2B43B4B22B71426D00251F5B /* ProfileHeaderView.swift */,
 				96D52A0A2B6AA950006CAA94 /* Achievements.swift */,
 				9603C42B2B6F42C400769EDE /* LoginView.swift */,
 				9603C42D2B6F530400769EDE /* OnBoardingScreen.swift */,
@@ -196,6 +202,8 @@
 				96D52A082B694027006CAA94 /* Classes.swift in Sources */,
 				9648E6982B62B28700301207 /* ContentView.swift in Sources */,
 				9648E6962B62B28700301207 /* FourthTriApp.swift in Sources */,
+				2B43B4B52B72865200251F5B /* ProfileOptionButton.swift in Sources */,
+				2B43B4B32B71426D00251F5B /* ProfileHeaderView.swift in Sources */,
 				96D52A0B2B6AA950006CAA94 /* Achievements.swift in Sources */,
 				9603C42E2B6F530400769EDE /* OnBoardingScreen.swift in Sources */,
 				9603C43A2B6F782400769EDE /* ClassView.swift in Sources */,
@@ -336,7 +344,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FourthTri/Preview Content\"";
-				DEVELOPMENT_TEAM = DR8AFBAT4A;
+				DEVELOPMENT_TEAM = 433ZM64ZDN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -344,6 +352,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -365,7 +374,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FourthTri/Preview Content\"";
-				DEVELOPMENT_TEAM = DR8AFBAT4A;
+				DEVELOPMENT_TEAM = 433ZM64ZDN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -373,6 +382,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

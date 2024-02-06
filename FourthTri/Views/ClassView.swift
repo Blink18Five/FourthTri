@@ -109,15 +109,18 @@ struct ElementView: View {
                                     .foregroundStyle(.white)
                             }
                             .padding(.top, 25)
-                            .padding(.bottom, 6)
+                            .padding(.bottom, 12)
                     }
                 }
             }
         }
         .frame(width: 180, height: 180)
-        .shadow(radius: 2)
         .clipShape(
             RoundedRectangle(cornerRadius: 10)
+        )
+        .overlay(
+            RoundedRectangle(cornerRadius: 10)
+            .stroke(Color.gray, lineWidth: 0.5)
         )
     }
 }
