@@ -8,7 +8,7 @@
 import SwiftUI
 
 
-struct Profile: View {
+struct ProfileView: View {
     
 //    var cWidth : CGFloat
 //    var cHeight : CGFloat
@@ -41,5 +41,5 @@ struct Profile: View {
 }
 
 #Preview {
-    Profile()
+    ProfileView()
 }

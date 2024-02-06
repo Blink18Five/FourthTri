@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Achievements: View {
+struct AchievementsView: View {
     @State private var name: String = "Leah Smith"
     @State private var email: String = "leahsmith02@gmail.com"
     
@@ -17,5 +17,5 @@ struct Achievements: View {
 }
 
 #Preview {
-    Achievements()
+    AchievementsView()
 }

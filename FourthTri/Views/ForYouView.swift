@@ -11,7 +11,7 @@ struct ForYouView: View {
     var body: some View {
         NavigationStack {
             HStack {
-                NavigationLink(destination: Profile()) {
+                NavigationLink(destination: ProfileView()) {
                     Image("profile")
                         .resizable()
                         .frame(width: 61, height: 61)
@@ -19,11 +19,11 @@ struct ForYouView: View {
                 }
                 .padding(.leading)
                 Spacer()
-                NavigationLink(destination: Achievements()) {
+                NavigationLink(destination: AchievementsView()) {
                     Image(systemName: "bell")
                         .font(.system(size: 28))
                 }
-                NavigationLink(destination: Achievements()) {
+                NavigationLink(destination: AchievementsView()) {
                     Circle()
                         .frame(width: 45)
                         .overlay {
