@@ -14,7 +14,7 @@
 		9603C4302B6F657600769EDE /* ForYouView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9603C42F2B6F657600769EDE /* ForYouView.swift */; };
 		9603C4322B6F65D100769EDE /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9603C4312B6F65D100769EDE /* ProgressView.swift */; };
 		9603C4342B6F65DF00769EDE /* PackagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9603C4332B6F65DF00769EDE /* PackagesView.swift */; };
-		9603C4362B6F65E900769EDE /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9603C4352B6F65E900769EDE /* Profile.swift */; };
+		9603C4362B6F65E900769EDE /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9603C4352B6F65E900769EDE /* ProfileView.swift */; };
 		9603C4382B6F773000769EDE /* MyScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9603C4372B6F773000769EDE /* MyScheduleView.swift */; };
 		9603C43A2B6F782400769EDE /* ClassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9603C4392B6F782400769EDE /* ClassView.swift */; };
 		9603C43D2B6F871F00769EDE /* EventsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9603C43C2B6F871F00769EDE /* EventsView.swift */; };
@@ -24,7 +24,7 @@
 		9648E69D2B62B28800301207 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9648E69C2B62B28800301207 /* Preview Assets.xcassets */; };
 		96D52A062B693F33006CAA94 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D52A052B693F33006CAA94 /* Person.swift */; };
 		96D52A082B694027006CAA94 /* Classes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D52A072B694027006CAA94 /* Classes.swift */; };
-		96D52A0B2B6AA950006CAA94 /* Achievements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D52A0A2B6AA950006CAA94 /* Achievements.swift */; };
+		96D52A0B2B6AA950006CAA94 /* AchievementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D52A0A2B6AA950006CAA94 /* AchievementsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +35,7 @@
 		9603C42F2B6F657600769EDE /* ForYouView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForYouView.swift; sourceTree = "<group>"; };
 		9603C4312B6F65D100769EDE /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		9603C4332B6F65DF00769EDE /* PackagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagesView.swift; sourceTree = "<group>"; };
-		9603C4352B6F65E900769EDE /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		9603C4352B6F65E900769EDE /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		9603C4372B6F773000769EDE /* MyScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyScheduleView.swift; sourceTree = "<group>"; };
 		9603C4392B6F782400769EDE /* ClassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassView.swift; sourceTree = "<group>"; };
 		9603C43C2B6F871F00769EDE /* EventsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsView.swift; sourceTree = "<group>"; };
@@ -46,7 +46,7 @@
 		9648E69C2B62B28800301207 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		96D52A052B693F33006CAA94 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		96D52A072B694027006CAA94 /* Classes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Classes.swift; sourceTree = "<group>"; };
-		96D52A0A2B6AA950006CAA94 /* Achievements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievements.swift; sourceTree = "<group>"; };
+		96D52A0A2B6AA950006CAA94 /* AchievementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,10 +115,10 @@
 				9603C4372B6F773000769EDE /* MyScheduleView.swift */,
 				9603C4312B6F65D100769EDE /* ProgressView.swift */,
 				9603C4332B6F65DF00769EDE /* PackagesView.swift */,
-				9603C4352B6F65E900769EDE /* Profile.swift */,
+				9603C4352B6F65E900769EDE /* ProfileView.swift */,
 				2B43B4B42B72865200251F5B /* ProfileOptionButton.swift */,
 				2B43B4B22B71426D00251F5B /* ProfileHeaderView.swift */,
-				96D52A0A2B6AA950006CAA94 /* Achievements.swift */,
+				96D52A0A2B6AA950006CAA94 /* AchievementsView.swift */,
 				9603C42B2B6F42C400769EDE /* LoginView.swift */,
 				9603C42D2B6F530400769EDE /* OnBoardingScreen.swift */,
 			);
@@ -204,10 +204,10 @@
 				9648E6962B62B28700301207 /* FourthTriApp.swift in Sources */,
 				2B43B4B52B72865200251F5B /* ProfileOptionButton.swift in Sources */,
 				2B43B4B32B71426D00251F5B /* ProfileHeaderView.swift in Sources */,
-				96D52A0B2B6AA950006CAA94 /* Achievements.swift in Sources */,
+				96D52A0B2B6AA950006CAA94 /* AchievementsView.swift in Sources */,
 				9603C42E2B6F530400769EDE /* OnBoardingScreen.swift in Sources */,
 				9603C43A2B6F782400769EDE /* ClassView.swift in Sources */,
-				9603C4362B6F65E900769EDE /* Profile.swift in Sources */,
+				9603C4362B6F65E900769EDE /* ProfileView.swift in Sources */,
 				9603C4382B6F773000769EDE /* MyScheduleView.swift in Sources */,
 				9603C4322B6F65D100769EDE /* ProgressView.swift in Sources */,
 				9603C4342B6F65DF00769EDE /* PackagesView.swift in Sources */,
