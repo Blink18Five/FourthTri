@@ -7,9 +7,36 @@
 
 import SwiftUI
 
+
 struct Profile: View {
+    
+//    var cWidth : CGFloat
+//    var cHeight : CGFloat
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            
+            Spacer()
+            
+            ProfileHeaderView()
+            
+            ProfileOptionButton(listIcon: "person.circle", listTitle: "Edit/Settings") {
+                
+            }
+            ProfileOptionButton(listIcon: "qrcode", listTitle: "QR Code") {
+                
+            }
+            ProfileOptionButton(listIcon: "questionmark.circle", listTitle: "Mobile Help") {
+                
+            }
+            ProfileOptionButton(listIcon: "rectangle.portrait.and.arrow.right", listTitle: "Log Out") {
+                
+            }
+            Spacer()
+            Spacer()
+
+            
+        }
     }
 }
 
