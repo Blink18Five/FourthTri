@@ -10,9 +10,6 @@ import SwiftUI
 
 struct ProfileView: View {
     
-//    var cWidth : CGFloat
-//    var cHeight : CGFloat
-    
     var body: some View {
         VStack {
             

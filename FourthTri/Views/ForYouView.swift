@@ -11,6 +11,7 @@ struct ForYouView: View {
     var body: some View {
         NavigationStack {
             HStack {
+                
                 NavigationLink(destination: ProfileView()) {
                     Image("profile")
                         .resizable()
@@ -19,10 +20,18 @@ struct ForYouView: View {
                 }
                 .padding(.leading)
                 Spacer()
+                
+                // NOTIFICATIONS BUTTON
+                
                 NavigationLink(destination: AchievementsView()) {
                     Image(systemName: "bell")
                         .font(.system(size: 28))
                 }
+                
+                // NOTIFICATIONS BUTTON
+                
+                // QR CODE BUTTON
+                
                 NavigationLink(destination: AchievementsView()) {
                     Circle()
                         .frame(width: 45)
@@ -33,6 +42,8 @@ struct ForYouView: View {
                         }
                 }
                 .padding(.trailing)
+                
+                // QR CODE BUTTON
             }
             .foregroundStyle(Color("tertiary"))
             .padding(.bottom)

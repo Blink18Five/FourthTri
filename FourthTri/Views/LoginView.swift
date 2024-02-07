@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LoginView: View {
-    @State private var person = Person()
+    @State private var person = User(firstName: "", lastName: "", email: "", password: "")
     @State private var isShowing = false
     @State private var isSecured = true
     @State private var email = ""
@@ -27,7 +27,7 @@ struct LoginView: View {
                 HStack {
                     Image(systemName: "envelope")
                         .font(.system(size: 28))
-                        .bold()
+                        .fontWeight(.medium)
                         .padding(.leading)
                     TextField("Email", text: $email)
                         
@@ -38,7 +38,7 @@ struct LoginView: View {
                 HStack {
                     Image(systemName: "lock")
                         .font(.system(size: 28))
-                        .bold()
+                        .fontWeight(.medium)
                         .padding(.leading, 20)
                     ZStack(alignment: .trailing) {
                         SecureField("Password", text: $password)
