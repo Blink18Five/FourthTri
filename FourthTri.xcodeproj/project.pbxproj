@@ -22,7 +22,8 @@
 		9648E6982B62B28700301207 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9648E6972B62B28700301207 /* ContentView.swift */; };
 		9648E69A2B62B28800301207 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9648E6992B62B28800301207 /* Assets.xcassets */; };
 		9648E69D2B62B28800301207 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9648E69C2B62B28800301207 /* Preview Assets.xcassets */; };
-		96D52A062B693F33006CAA94 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D52A052B693F33006CAA94 /* Person.swift */; };
+		967CE45E2B73F2B6005DD471 /* ResourceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967CE45D2B73F2B6005DD471 /* ResourceRequest.swift */; };
+		96D52A062B693F33006CAA94 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D52A052B693F33006CAA94 /* User.swift */; };
 		96D52A082B694027006CAA94 /* Classes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D52A072B694027006CAA94 /* Classes.swift */; };
 		96D52A0B2B6AA950006CAA94 /* AchievementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D52A0A2B6AA950006CAA94 /* AchievementsView.swift */; };
 /* End PBXBuildFile section */
@@ -44,7 +45,8 @@
 		9648E6972B62B28700301207 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9648E6992B62B28800301207 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9648E69C2B62B28800301207 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		96D52A052B693F33006CAA94 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		967CE45D2B73F2B6005DD471 /* ResourceRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceRequest.swift; sourceTree = "<group>"; };
+		96D52A052B693F33006CAA94 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		96D52A072B694027006CAA94 /* Classes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Classes.swift; sourceTree = "<group>"; };
 		96D52A0A2B6AA950006CAA94 /* AchievementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -82,6 +84,7 @@
 				9648E6952B62B28700301207 /* FourthTriApp.swift */,
 				96D52A092B6AA913006CAA94 /* Views */,
 				96D52A042B693F1D006CAA94 /* Models */,
+				967CE45C2B73F29B005DD471 /* Utilities */,
 				9648E6992B62B28800301207 /* Assets.xcassets */,
 				9648E69B2B62B28800301207 /* Preview Content */,
 			);
@@ -96,10 +99,18 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		967CE45C2B73F29B005DD471 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				967CE45D2B73F2B6005DD471 /* ResourceRequest.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		96D52A042B693F1D006CAA94 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				96D52A052B693F33006CAA94 /* Person.swift */,
+				96D52A052B693F33006CAA94 /* User.swift */,
 				96D52A072B694027006CAA94 /* Classes.swift */,
 			);
 			path = Models;
@@ -197,7 +208,7 @@
 			files = (
 				9603C42C2B6F42C400769EDE /* LoginView.swift in Sources */,
 				9603C43D2B6F871F00769EDE /* EventsView.swift in Sources */,
-				96D52A062B693F33006CAA94 /* Person.swift in Sources */,
+				96D52A062B693F33006CAA94 /* User.swift in Sources */,
 				9603C4302B6F657600769EDE /* ForYouView.swift in Sources */,
 				96D52A082B694027006CAA94 /* Classes.swift in Sources */,
 				9648E6982B62B28700301207 /* ContentView.swift in Sources */,
@@ -210,6 +221,7 @@
 				9603C4362B6F65E900769EDE /* ProfileView.swift in Sources */,
 				9603C4382B6F773000769EDE /* MyScheduleView.swift in Sources */,
 				9603C4322B6F65D100769EDE /* ProgressView.swift in Sources */,
+				967CE45E2B73F2B6005DD471 /* ResourceRequest.swift in Sources */,
 				9603C4342B6F65DF00769EDE /* PackagesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
