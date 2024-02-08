@@ -7,6 +7,29 @@
 
 import SwiftUI
 
+struct TruncatedTextView : View {
+    
+    let text: String
+    let maximumLength: Int
+    
+    //
+    var truncatedText : String {
+        if text.count > maximumLength {
+            return String(text.prefix(maximumLength)) + "..."
+        } else {
+            return text
+        }
+    }
+    //
+    
+    var body: some View {
+        Text(truncatedText)
+    }
+}
+
+// ADDED THIS TEXT VIEW THAT ADDS THE THREE ELIPSIS IF IT EXCEEDS THE MAXIMUM LENGTH PROVIDED
+
+
 struct ClassesView: View {
     var body: some View {
         Text("Hello World")
@@ -15,7 +38,7 @@ struct ClassesView: View {
 
 struct FeaturedClassesView: View {
     var body: some View {
-        FeaturedScrollView(element: "Classes", elementName: "Class Name", elementDescription:  "description description description\ndescription description description\ndescription description ...") 
+        FeaturedScrollView(element: "Classes", elementName: "Class Name", elementDescription:  "description description description description description description description description")
         {
             ClassesView()
         }
@@ -80,6 +103,7 @@ struct ElementView: View {
                     RoundedRectangle(cornerRadius: 10)
                         .foregroundStyle(Color.powderpink)
                         .frame(width: 89, height: 89)
+                        .padding(.bottom, 40)
                     Spacer()
                 }
                 Spacer()
@@ -91,16 +115,18 @@ struct ElementView: View {
                     .clipShape(RoundedRectangle(cornerRadius: 8.0))
                 HStack {
                     Text(elementName)
-                        .font(.system(size: 16))
+                        .font(.system(size: 18))
                         .bold()
                         .padding([.top, .bottom], 8)
                         .padding(.leading, 55)
                     Spacer()
                 }
                 HStack(alignment: .top, spacing: 0) {
-                    Text(elementDescription)
-                        .font(.system(size: 8))
-                        .padding(.trailing, 5)
+                    TruncatedTextView(text: elementDescription, maximumLength: 70)
+                        .font(.system(size: 11))
+                        .frame(width: 150)
+                        .padding(.leading, 1)
+                        .fontWeight(.medium)
                     VStack {
                         Circle()
                             .frame(width: 23, height: 23)
@@ -111,6 +137,7 @@ struct ElementView: View {
                             }
                             .padding(.top, 25)
                             .padding(.bottom, 12)
+                            .padding(.trailing, 8)
                     }
                 }
             }

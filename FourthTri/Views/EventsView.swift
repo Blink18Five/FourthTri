@@ -15,7 +15,7 @@ struct EventsView: View {
 
 struct FeaturedEventsView: View {
     var body: some View {
-        FeaturedScrollView(element: "Events", elementName: "Event Name", elementDescription:  "description description description\ndescription description description\ndescription description ...") {
+        FeaturedScrollView(element: "Events", elementName: "Event Name", elementDescription:  "description description description description description description description description") {
             EventsView()
         }
     }

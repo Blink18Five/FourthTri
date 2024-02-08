@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B42A21A2B73F80800B0FA7B /* NotificationModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B42A2192B73F80800B0FA7B /* NotificationModalView.swift */; };
 		2B43B4B32B71426D00251F5B /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B43B4B22B71426D00251F5B /* ProfileHeaderView.swift */; };
 		2B43B4B52B72865200251F5B /* ProfileOptionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B43B4B42B72865200251F5B /* ProfileOptionButton.swift */; };
+		2B5A76722B73C65E00B86391 /* QRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5A76712B73C65E00B86391 /* QRCodeView.swift */; };
 		9603C42C2B6F42C400769EDE /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9603C42B2B6F42C400769EDE /* LoginView.swift */; };
 		9603C42E2B6F530400769EDE /* OnBoardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9603C42D2B6F530400769EDE /* OnBoardingScreen.swift */; };
 		9603C4302B6F657600769EDE /* ForYouView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9603C42F2B6F657600769EDE /* ForYouView.swift */; };
@@ -29,8 +31,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2B42A2192B73F80800B0FA7B /* NotificationModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModalView.swift; sourceTree = "<group>"; };
 		2B43B4B22B71426D00251F5B /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		2B43B4B42B72865200251F5B /* ProfileOptionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOptionButton.swift; sourceTree = "<group>"; };
+		2B5A76712B73C65E00B86391 /* QRCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeView.swift; sourceTree = "<group>"; };
 		9603C42B2B6F42C400769EDE /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		9603C42D2B6F530400769EDE /* OnBoardingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingScreen.swift; sourceTree = "<group>"; };
 		9603C42F2B6F657600769EDE /* ForYouView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForYouView.swift; sourceTree = "<group>"; };
@@ -121,6 +125,8 @@
 			children = (
 				9648E6972B62B28700301207 /* ContentView.swift */,
 				9603C42F2B6F657600769EDE /* ForYouView.swift */,
+				2B5A76712B73C65E00B86391 /* QRCodeView.swift */,
+				2B42A2192B73F80800B0FA7B /* NotificationModalView.swift */,
 				9603C4392B6F782400769EDE /* ClassView.swift */,
 				9603C43C2B6F871F00769EDE /* EventsView.swift */,
 				9603C4372B6F773000769EDE /* MyScheduleView.swift */,
@@ -217,7 +223,9 @@
 				2B43B4B32B71426D00251F5B /* ProfileHeaderView.swift in Sources */,
 				96D52A0B2B6AA950006CAA94 /* AchievementsView.swift in Sources */,
 				9603C42E2B6F530400769EDE /* OnBoardingScreen.swift in Sources */,
+				2B42A21A2B73F80800B0FA7B /* NotificationModalView.swift in Sources */,
 				9603C43A2B6F782400769EDE /* ClassView.swift in Sources */,
+				2B5A76722B73C65E00B86391 /* QRCodeView.swift in Sources */,
 				9603C4362B6F65E900769EDE /* ProfileView.swift in Sources */,
 				9603C4382B6F773000769EDE /* MyScheduleView.swift in Sources */,
 				9603C4322B6F65D100769EDE /* ProgressView.swift in Sources */,
