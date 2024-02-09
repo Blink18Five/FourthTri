@@ -10,43 +10,9 @@ import SwiftUI
 struct ForYouView: View {
     var body: some View {
         NavigationStack {
-            HStack {
-                
-                NavigationLink(destination: ProfileView()) {
-                    Image("profile")
-                        .resizable()
-                        .frame(width: 61, height: 61)
-                        .clipShape(Circle())
-                }
-                .padding(.leading)
-                Spacer()
-                
-                // NOTIFICATIONS BUTTON
-                
-                NavigationLink(destination: AchievementsView()) {
-                    Image(systemName: "bell")
-                        .font(.system(size: 28))
-                }
-                
-                // NOTIFICATIONS BUTTON
-                
-                // QR CODE BUTTON
-                
-                NavigationLink(destination: AchievementsView()) {
-                    Circle()
-                        .frame(width: 45)
-                        .overlay {
-                            Image(systemName: "qrcode")
-                                .font(.system(size: 28))
-                                .foregroundStyle(.white)
-                        }
-                }
-                .padding(.trailing)
-                
-                // QR CODE BUTTON
-            }
-            .foregroundStyle(Color("tertiary"))
-            .padding(.bottom)
+            
+            mainHeaderView()
+            
             ScrollView {
                 VStack {
                     HStack {
@@ -87,27 +53,9 @@ struct ForYouView: View {
                     FeaturedEventsView()
                     
                 }
-                ZStack(alignment: .leading) {
-                    Image("finalForYou")
-                        .resizable()
-                        .frame(width: 358, height: 116)
-                        .overlay {
-                            RadialGradient(
-                                gradient: Gradient(colors: [.clear, .black]),
-                                center: .topTrailing,
-                                startRadius: .zero,
-                                endRadius: CGFloat(600.0)
-                            )
-                        }
-                        .clipShape(RoundedRectangle(cornerRadius: 8.0))
-                        .padding()
-                    Text("The most essential\ngift to give")
-                        .multilineTextAlignment(.leading)
-                        .font(.system(size: 25))
-                        .foregroundStyle(Color.white)
-                        .bold()
-                        .padding(.leading, 25)
-                }
+                
+                PromotionalImageView(imageName: "FinalForYou", imagePromo: "The most essential gift to give", actionButton: false)
+                
             }
         }
     }
@@ -160,6 +108,112 @@ func taskHeaders(title: String, sfImage: String) -> some View {
         Spacer()
     }
 }
+
+struct mainHeaderView : View {
+    var body : some View {
+            HStack {
+                
+                NavigationLink(destination: ProfileView()) {
+                    Image("ProfilePic2")
+                        .resizable(resizingMode: .stretch)
+                        .frame(width: 61, height: 61)
+                        .clipShape(Circle())
+                }
+                .padding(.leading, 16)
+                Spacer()
+                
+                // NOTIFICATIONS BUTTON
+                
+                NavigationLink(destination: NotificationModalView()) {
+                    Image(systemName: "bell")
+                        .font(.system(size: 28))
+                }
+                
+                // NOTIFICATIONS BUTTON
+                
+                // QR CODE BUTTON
+                
+                NavigationLink(destination: QRCodeView()) {
+                    Circle()
+                        .frame(width: 45)
+                        .overlay {
+                            Image(systemName: "qrcode")
+                                .font(.system(size: 28))
+                                .foregroundStyle(.white)
+                        }
+                }
+                .padding(.trailing, 16)
+                
+                // QR CODE BUTTON
+            }
+            .foregroundStyle(Color("tertiary"))
+            .padding(.bottom)
+            
+        }
+    }
+
+struct PromotionalImageView: View {
+    
+    var imageName : String
+    var imagePromo : String
+    var actionButton : Bool
+    
+    
+    var body: some View {
+        
+        ZStack(alignment: .leading) {
+            Image(imageName)
+                .resizable()
+                .frame(width: 358, height: 116)
+                .overlay {
+                    RadialGradient(
+                        gradient: Gradient(colors: [.clear, .black]),
+                        center: .topTrailing,
+                        startRadius: .zero,
+                        endRadius: CGFloat(600.0)
+                    )
+                }
+                .clipShape(RoundedRectangle(cornerRadius: 8.0))
+                .padding(.horizontal, 5)
+            
+            HStack {
+                Text(imagePromo)
+                    .font(.system(size: 24))
+                    .foregroundStyle(Color.white)
+                    .fontWeight(.medium)
+                    .padding(.leading, 25)
+                    .frame(width: 230,height: 90)
+                
+                if actionButton {
+                    VStack {
+                        
+                        Button(action: {
+                            
+                        }, label: {
+                            ZStack {
+                                RoundedRectangle(cornerRadius: 8)
+                                    .foregroundStyle(Color.accentColor)
+                                    .frame(width: 108, height: 40)
+                                Text("Join Now!")
+                                    .foregroundStyle(Color.white)
+                                    .font(.system(size: 13))
+                                    .fontWeight(.medium)
+                            }
+                            .shadow(radius: 10)
+                            .padding(.top, 50)
+                        })
+                        
+                    }
+                }
+            }
+            
+        }
+        
+    }
+}
+
+
+
 
 #Preview {
     ForYouView()

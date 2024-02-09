@@ -60,6 +60,8 @@ public struct ModalHeaderView: View {
     
     var headerTitle : String
     
+    var addButton : Bool
+    
     public var body : some View {
         
         HStack {
@@ -72,10 +74,25 @@ public struct ModalHeaderView: View {
                 Text(headerTitle)
                     .bold()
                     .font(.title)
-                    .padding(.leading, 20)
+                    .padding(.leading, 40)
                 
                 Spacer()
                 Spacer()
+            
+            if addButton {
+                
+                Button(action: {
+                    // SCHEDULE ACTION GOES HERE SCHEULE MODAL VIEW 
+                }, label: {
+                    Image(systemName: "plus")
+                        .font(.system(size: 24))
+                        .fontWeight(.regular)
+                        .foregroundStyle(Color.accentColor)
+                        .padding(.horizontal, 5)
+                })
+                
+            }
+               
             
         }
         .padding()
@@ -89,7 +106,7 @@ struct QRCodeView: View {
         
         VStack {
             
-            ModalHeaderView(headerTitle: "Check In")
+            ModalHeaderView(headerTitle: "Check In",addButton: false)
             
             Image("QRCode")
             

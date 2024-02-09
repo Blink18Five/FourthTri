@@ -8,11 +8,166 @@
 import SwiftUI
 
 struct PackagesView: View {
+    
+    @State private var selectedTab: PackageTab = .MomAndBaby
+    
+    enum PackageTab {
+        case MomAndBaby
+        case MomOnly
+        case AddOn
+    }
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+            VStack {
+                
+                mainHeaderView()
+                
+        // Currently MainHeaderView only works in the ForYouView and i think it has something to do with there not being a navigationStack when i am calling mainHeaderView into other views
+                
+                Text("Explore our Packages")
+                    .font(.system(size: 24))
+                    .fontWeight(.medium)
+                
+                PromotionalImageView(imageName: "PackagesPromo", imagePromo: "Join today for 20% off your first purchase", actionButton: true)
+                
+                HStack(spacing: 35) {
+                    PackagesTabStyle(tabPicture: "PackageTab1", tabTitle: "Mom+Baby", tab: .MomAndBaby, selectedTab: $selectedTab)
+                    PackagesTabStyle(tabPicture: "PackageTab2", tabTitle: "Just Mom", tab: .MomOnly, selectedTab: $selectedTab)
+                    PackagesTabStyle(tabPicture: "PackageTab3", tabTitle: "Add On's", tab: .AddOn, selectedTab: $selectedTab)
+                }
+                .padding(.all , 10)
+                
+                contentViewForSelectedTab()
+                
+            }
+        }
+        
+        private func contentViewForSelectedTab() -> some View {
+            switch selectedTab {
+            case .MomAndBaby:
+                return AnyView(MomAndBabyView())
+            case .MomOnly:
+                return AnyView(JustMomView())
+            case .AddOn:
+                return AnyView(AddOnView())
+            }
+        }
+        
+}
+
+struct PackagesTabStyle : View {
+    
+    var tabPicture : String
+    var tabTitle : String
+    let tab: PackagesView.PackageTab
+    
+    @Binding var selectedTab: PackagesView.PackageTab
+    
+    var body : some View {
+        
+        Button(action: {
+            selectedTab = tab
+        }, label: {
+            
+            VStack{
+                Image(tabPicture)
+                    .clipShape(Circle())
+                    .frame(width: 75,height: 75)
+                Text(tabTitle)
+                    .foregroundStyle(Color.black)
+                    .font(.system(size: 13))
+                    .fontWeight(.medium)
+            }
+            
+        })
+        
+    }
+}
+
+// below are the views for the tab bar i made all pretty much the same
+
+struct MomAndBabyView : View{
+    var body : some View {
+        
+        ScrollView (.vertical) {
+            HStack {
+                Text("Mom & Baby Packages")
+                    .padding(.leading)
+                    .padding(.top)
+                    .font(.system(size: 21))
+                    .fontWeight(.medium)
+                Spacer()
+            }
+            
+            HStack {
+                ElementView(elementName: "Package", elementDescription: "description description description description description description description description")
+                ElementView(elementName: "Package", elementDescription: "description description description description description description description description")
+            }
+            
+            HStack {
+                ElementView(elementName: "Package", elementDescription: "description description description description description description description description")
+                ElementView(elementName: "Package", elementDescription: "description description description description description description description description")
+            }
+        }
+        
+    }
+}
+
+struct JustMomView : View{
+    var body : some View {
+        
+        ScrollView (.vertical) {
+            HStack {
+                Text("Mom Only Packages")
+                    .padding(.leading)
+                    .padding(.top)
+                    .font(.system(size: 21))
+                    .fontWeight(.medium)
+                Spacer()
+            }
+            
+            HStack {
+                ElementView(elementName: "Package", elementDescription: "description description description description description description description description")
+                ElementView(elementName: "Package", elementDescription: "description description description description description description description description")
+            }
+            
+            HStack {
+                ElementView(elementName: "Package", elementDescription: "description description description description description description description description")
+                ElementView(elementName: "Package", elementDescription: "description description description description description description description description")
+            }
+        }
+        
+    }
+}
+
+struct AddOnView : View {
+    var body : some View {
+        
+        ScrollView (.vertical) {
+            HStack {
+                Text("Add On's")
+                    .padding(.leading)
+                    .padding(.top)
+                    .font(.system(size: 21))
+                    .fontWeight(.medium)
+                Spacer()
+            }
+            
+            HStack {
+                ElementView(elementName: "Package", elementDescription: "description description description description description description description description")
+                ElementView(elementName: "Package", elementDescription: "description description description description description description description description")
+            }
+            
+            HStack {
+                ElementView(elementName: "Package", elementDescription: "description description description description description description description description")
+                ElementView(elementName: "Package", elementDescription: "description description description description description description description description")
+            }
+        }
+        
     }
 }
 
 #Preview {
     PackagesView()
 }
+
