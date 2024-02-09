@@ -90,7 +90,7 @@ struct NotificationModalView: View {
     var body: some View {
         VStack {
             
-            ModalHeaderView(headerTitle: "Notifications")
+            ModalHeaderView(headerTitle: "Notifications", addButton: false)
             
             ScrollView(.vertical) {
                 
