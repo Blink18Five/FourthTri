@@ -106,7 +106,7 @@ struct QRCodeView: View {
         
         VStack {
             
-            ModalHeaderView(headerTitle: "Check In",addButton: false)
+            // ModalHeaderView(headerTitle: "Check In",addButton: false)
             
             Image("QRCode")
             
