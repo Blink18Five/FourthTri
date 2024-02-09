@@ -110,6 +110,9 @@ func taskHeaders(title: String, sfImage: String) -> some View {
 }
 
 struct mainHeaderView : View {
+  @State private var isShowingNotification: Bool = false
+  @State private var isShowingQRCode: Bool = false
+  
     var body : some View {
             HStack {
                 
@@ -123,26 +126,42 @@ struct mainHeaderView : View {
                 Spacer()
                 
                 // NOTIFICATIONS BUTTON
-                
-                NavigationLink(destination: NotificationModalView()) {
-                    Image(systemName: "bell")
-                        .font(.system(size: 28))
-                }
+              Button {
+                self.isShowingNotification = true
+              } label: {
+                Image(systemName: "bell")
+                  .font(.system(size: 28))
+              }
+              .popover(isPresented: $isShowingNotification) {
+                NotificationModalView()
+                  .frame(minWidth: 300, maxHeight: 400)
+                  .presentationCompactAdaptation(.popover)
+                  .padding()
+                  .foregroundStyle(.black)
+              }
+              
                 
                 // NOTIFICATIONS BUTTON
                 
                 // QR CODE BUTTON
                 
-                NavigationLink(destination: QRCodeView()) {
-                    Circle()
-                        .frame(width: 45)
-                        .overlay {
-                            Image(systemName: "qrcode")
-                                .font(.system(size: 28))
-                                .foregroundStyle(.white)
-                        }
-                }
-                .padding(.trailing, 16)
+              Button {
+                self.isShowingQRCode = true
+              } label: {
+                Circle()
+                    .frame(width: 45)
+                    .overlay {
+                        Image(systemName: "qrcode")
+                            .font(.system(size: 28))
+                            .foregroundStyle(.white)
+                    }
+              }
+              .padding(.trailing, 16)
+              .popover(isPresented: $isShowingQRCode){
+                QRCodeView()
+                  .presentationCompactAdaptation(.none)
+                  .padding()
+              }
                 
                 // QR CODE BUTTON
             }
