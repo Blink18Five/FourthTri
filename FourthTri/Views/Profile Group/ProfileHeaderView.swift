@@ -45,18 +45,7 @@ struct ProfileHeaderView: View {
     var body: some View {
         VStack {
             
-            Circle()
-                .foregroundStyle(Color.ourGray)
-                .frame(width: 120 , height: 120)
-                .overlay(
-                    Circle()
-                        .stroke(Color.powderpink, lineWidth: 2)
-                        .overlay {
-                            Image(systemName: "person.fill")
-                                .font(.system(size: 80))
-                        }
-                        
-                )
+            ProfilePicture(showEdit: true)
             
             Text(name)
                 .font(.title)
@@ -81,6 +70,42 @@ Title
 """)
             }
             .padding()
+            
+        }
+    }
+}
+
+
+struct ProfilePicture : View {
+    
+    var showEdit : Bool
+    
+    var body : some View {
+        ZStack {
+            Circle()
+                .foregroundStyle(Color.ourGray)
+                .frame(width: 120 , height: 120)
+                .overlay(
+                    Circle()
+                        .stroke(Color.powderpink, lineWidth: 2)
+                        .overlay {
+                            Image(systemName: "person.fill")
+                                .font(.system(size: 80))
+                        }
+                    
+                )
+            
+            if showEdit {
+                Button(action: {
+                    // PROFILE PICTURE EDIT ACTION
+                }, label: {
+                    Image(systemName: "pencil.circle.fill")
+                        .font(.system(size: 35))
+                        .foregroundStyle(Color.accentColor)
+                })
+                .offset(x: 45.0,y: 46.0)
+            }
+           
             
         }
     }
