@@ -31,7 +31,6 @@ struct ProfileView: View {
             }
             Spacer()
             Spacer()
-
             
         }
     }

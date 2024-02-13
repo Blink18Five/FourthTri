@@ -42,14 +42,14 @@ struct PackagesView: View {
             }
         }
         
-        private func contentViewForSelectedTab() -> some View {
+        @ViewBuilder func contentViewForSelectedTab() -> some View {
             switch selectedTab {
             case .MomAndBaby:
-                return AnyView(MomAndBabyView())
+                MomAndBabyView()
             case .MomOnly:
-                return AnyView(JustMomView())
+                JustMomView()
             case .AddOn:
-                return AnyView(AddOnView())
+                AddOnView()
             }
         }
         
