@@ -15,6 +15,7 @@
 		2B43B4B32B71426D00251F5B /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B43B4B22B71426D00251F5B /* ProfileHeaderView.swift */; };
 		2B43B4B52B72865200251F5B /* ProfileOptionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B43B4B42B72865200251F5B /* ProfileOptionButton.swift */; };
 		2B5A76722B73C65E00B86391 /* QRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5A76712B73C65E00B86391 /* QRCodeView.swift */; };
+		2B8D62BC2B7B2DEE00B76336 /* ProfileSOSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8D62BB2B7B2DEE00B76336 /* ProfileSOSView.swift */; };
 		9603C42C2B6F42C400769EDE /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9603C42B2B6F42C400769EDE /* LoginView.swift */; };
 		9603C42E2B6F530400769EDE /* OnBoardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9603C42D2B6F530400769EDE /* OnBoardingScreen.swift */; };
 		9603C4302B6F657600769EDE /* ForYouView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9603C42F2B6F657600769EDE /* ForYouView.swift */; };
@@ -43,6 +44,7 @@
 		2B43B4B22B71426D00251F5B /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		2B43B4B42B72865200251F5B /* ProfileOptionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOptionButton.swift; sourceTree = "<group>"; };
 		2B5A76712B73C65E00B86391 /* QRCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeView.swift; sourceTree = "<group>"; };
+		2B8D62BB2B7B2DEE00B76336 /* ProfileSOSView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSOSView.swift; sourceTree = "<group>"; };
 		9603C42B2B6F42C400769EDE /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		9603C42D2B6F530400769EDE /* OnBoardingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingScreen.swift; sourceTree = "<group>"; };
 		9603C42F2B6F657600769EDE /* ForYouView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForYouView.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				9603C4352B6F65E900769EDE /* ProfileView.swift */,
 				2B2DA3FA2B7686CA00230EBD /* ProfileSettingsView.swift */,
 				2B2DA3FD2B7A9EED00230EBD /* ProfileFAQView.swift */,
+				2B8D62BB2B7B2DEE00B76336 /* ProfileSOSView.swift */,
 				2B43B4B42B72865200251F5B /* ProfileOptionButton.swift */,
 				2B43B4B22B71426D00251F5B /* ProfileHeaderView.swift */,
 			);
@@ -248,6 +251,7 @@
 				9603C42E2B6F530400769EDE /* OnBoardingScreen.swift in Sources */,
 				2B2DA3FB2B7686CA00230EBD /* ProfileSettingsView.swift in Sources */,
 				2B42A21A2B73F80800B0FA7B /* NotificationModalView.swift in Sources */,
+				2B8D62BC2B7B2DEE00B76336 /* ProfileSOSView.swift in Sources */,
 				9603C43A2B6F782400769EDE /* ClassView.swift in Sources */,
 				2B5A76722B73C65E00B86391 /* QRCodeView.swift in Sources */,
 				9603C4362B6F65E900769EDE /* ProfileView.swift in Sources */,
