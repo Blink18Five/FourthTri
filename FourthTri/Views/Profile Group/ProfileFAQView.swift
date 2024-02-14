@@ -27,12 +27,19 @@ struct ProfileFAQView: View {
                 .padding()
         }
         
-            List{
-                Text("question 1?")
-                Text("question 2?")
-                Text("question 3?")
-                Text("question 4?")
+        List{
+            Group {
+                Text("When do I sign up?")
+                Text("How do I redeem a gift card?")
+                Text("What is included?")
+                Text("Do you provide childcare?")
+                Text("What do I need to bring with me?")
+                Text("Waht do I wear?")
+                Text("Can I bring food to the facility?")
+                Text("Is it an overnight resource?")
             }
+            .font(.system(size: 18))
+        }
         
     }
 }
