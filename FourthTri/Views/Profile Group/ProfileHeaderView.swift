@@ -41,6 +41,7 @@ struct ProfileRectangleSection: View {
 struct ProfileHeaderView: View {
     var name: String
     var email: String
+  @State private var isHelpShowing = false
     
     var body: some View {
         VStack {
@@ -58,11 +59,17 @@ struct ProfileHeaderView: View {
 Placeholder
 Title
 """)
+              Button {
+                isHelpShowing = true
+              } label: {
                 ProfileRectangleSection(RectangleImage: "cross", RectangleTitle:
 """
-Placeholder
-Title
+Emergency
+Help
 """)
+              }
+              .foregroundStyle(.black)
+                
                 ProfileRectangleSection(RectangleImage: "list.clipboard", RectangleTitle:
 """
 Placeholder
@@ -72,6 +79,9 @@ Title
             .padding()
             
         }
+        .sheet(isPresented: $isHelpShowing, content: {
+          ProfileSOSView()
+        })
     }
 }
 
