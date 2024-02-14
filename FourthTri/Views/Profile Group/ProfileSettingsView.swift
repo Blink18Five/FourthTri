@@ -9,12 +9,12 @@ import SwiftUI
 
 struct ProfileSettingsView: View {
     
-    @State var nameInput : String
-    @State var usernameInput : String
-    @State var pronounInput : String
-    @State var passwordInput : String
-    @State var emergencyNameInput : String
-    @State var emergencyPhoneInput : String
+    @State var nameInput : String = ""
+    @State var usernameInput : String = ""
+    @State var pronounInput : String = ""
+    @State var passwordInput : String = ""
+    @State var emergencyNameInput : String = ""
+    @State var emergencyPhoneInput : String = ""
     
     var body: some View {
         
@@ -25,9 +25,9 @@ struct ProfileSettingsView: View {
             
             Group {
                 InputSettingsView(inputTitle: "Name", inputFieldDescription: "Name", textInput: $nameInput, isHidden: false)
-                InputSettingsView(inputTitle: "Username", inputFieldDescription: "Name", textInput: $usernameInput, isHidden: false)
-                InputSettingsView(inputTitle: "Pronouns", inputFieldDescription: "Name", textInput: $pronounInput, isHidden: false)
-                InputSettingsView(inputTitle: "Password", inputFieldDescription: "Name", textInput: $passwordInput, isHidden: true)
+                InputSettingsView(inputTitle: "Username", inputFieldDescription: "Username", textInput: $usernameInput, isHidden: false)
+                InputSettingsView(inputTitle: "Pronouns", inputFieldDescription: "Pronouns", textInput: $pronounInput, isHidden: false)
+                InputSettingsView(inputTitle: "Password", inputFieldDescription: "Password", textInput: $passwordInput, isHidden: true)
             }
             
             HStack {
@@ -58,12 +58,12 @@ struct InputSettingsView : View {
     var body : some View {
         
         HStack{
-            Text(inputTitle)
+            //Text(inputTitle)
             
             if !isHidden {
-                CustomTextFieldView(placeholder: "", textColor: .black, text: $textInput, widthMultiplier: 1, heightMultiplier: 1)
+              CustomTextFieldView(placeholder: inputFieldDescription, textColor: .gray, text: $textInput, widthMultiplier: 1, heightMultiplier: 1)
             } else {
-                CustomSecureFieldView(placeholder: "", textColor: .black, text: $textInput, widthMultiplier: 1, heightMultiplier: 1, hidden: isHidden)
+                CustomSecureFieldView(placeholder: inputFieldDescription, textColor: .gray, text: $textInput, widthMultiplier: 1, heightMultiplier: 1, hidden: isHidden)
             }
             
                 
@@ -97,7 +97,7 @@ struct CustomTextFieldView : View {
             }
             
                 TextField("", text: $text)
-                    .foregroundColor(textColor)
+                    .foregroundColor(.black)
                     .padding(.horizontal, 10)
             }
             
@@ -132,11 +132,11 @@ struct CustomSecureFieldView : View {
             
             if hidden {
                 SecureField("", text: $text)
-                    .foregroundColor(textColor)
+                    .foregroundColor(.black)
                     .padding(.horizontal, 10)
             } else {
                 TextField("", text: $text)
-                    .foregroundColor(textColor)
+                    .foregroundColor(.black)
                     .padding(.horizontal, 10)
             }
             
@@ -146,7 +146,7 @@ struct CustomSecureFieldView : View {
                 Button(action: {
                     self.hidden.toggle()
                 }, label: {
-                    Image(systemName: hidden ? "eye.slash" : "eye.slash.fill")
+                    Image(systemName: hidden ? "eye.slash" : "eye.fill")
                 })
                 .padding(.horizontal)
                 

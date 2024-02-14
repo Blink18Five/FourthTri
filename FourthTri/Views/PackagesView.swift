@@ -18,29 +18,31 @@ struct PackagesView: View {
     }
     
     var body: some View {
-            VStack {
-                
-                mainHeaderView()
-                
-        // Currently MainHeaderView only works in the ForYouView and i think it has something to do with there not being a navigationStack when i am calling mainHeaderView into other views
-                
-                Text("Explore our Packages")
-                    .font(.system(size: 24))
-                    .fontWeight(.medium)
-                
-                PromotionalImageView(imageName: "PackagesPromo", imagePromo: "Join today for 20% off your first purchase", actionButton: true)
-                
-                HStack(spacing: 35) {
-                    PackagesTabStyle(tabPicture: "PackageTab1", tabTitle: "Mom+Baby", tab: .MomAndBaby, selectedTab: $selectedTab)
-                    PackagesTabStyle(tabPicture: "PackageTab2", tabTitle: "Just Mom", tab: .MomOnly, selectedTab: $selectedTab)
-                    PackagesTabStyle(tabPicture: "PackageTab3", tabTitle: "Add On's", tab: .AddOn, selectedTab: $selectedTab)
-                }
-                .padding(.all , 10)
-                
-                contentViewForSelectedTab()
-                
+            NavigationStack {
+              VStack {
+                  
+                  mainHeaderView()
+                  
+          // Currently MainHeaderView only works in the ForYouView and i think it has something to do with there not being a navigationStack when i am calling mainHeaderView into other views
+                  
+                  Text("Explore our Packages")
+                      .font(.system(size: 24))
+                      .fontWeight(.medium)
+                  
+                  PromotionalImageView(imageName: "PackagesPromo", imagePromo: "Join today for 20% off your first purchase", actionButton: true)
+                  
+                  HStack(spacing: 35) {
+                      PackagesTabStyle(tabPicture: "PackageTab1", tabTitle: "Mom+Baby", tab: .MomAndBaby, selectedTab: $selectedTab)
+                      PackagesTabStyle(tabPicture: "PackageTab2", tabTitle: "Just Mom", tab: .MomOnly, selectedTab: $selectedTab)
+                      PackagesTabStyle(tabPicture: "PackageTab3", tabTitle: "Add On's", tab: .AddOn, selectedTab: $selectedTab)
+                  }
+                  .padding(.all , 10)
+                  
+                  contentViewForSelectedTab()
+                  
+              }
+          }
             }
-        }
         
         @ViewBuilder func contentViewForSelectedTab() -> some View {
             switch selectedTab {

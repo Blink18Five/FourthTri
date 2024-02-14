@@ -41,8 +41,14 @@ struct LoginView: View {
                         .fontWeight(.medium)
                         .padding(.leading, 20)
                     ZStack(alignment: .trailing) {
-                        SecureField("Password", text: $password)
+                        if isSecured {
+                          SecureField("Password", text: $password)
                             .padding(.leading, 5)
+                        } else {
+                          TextField("Password", text: $password)
+                            .padding(.leading, 5)
+                        }
+                        
                         Button {
                             self.isSecured.toggle()
                         } label: {
@@ -112,15 +118,6 @@ struct LoginView: View {
         }
     }
 }
-
-//struct ErrorMessage: View {
-//    var title: String = ""
-//    var message: String = ""
-//    
-//    var body: some View {
-//        Alert(title: Text(title), message: Text(message))
-//    }
-//}
 
 struct ButtonView<Label> : View where Label : View {
     var action: () -> Void
