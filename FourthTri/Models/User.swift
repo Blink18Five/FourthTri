@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class User: Codable {
+final class User: ObservableObject, Codable {
   var firstName: String
   var middleName: String?
   var lastName: String

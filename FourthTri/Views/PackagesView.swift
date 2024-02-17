@@ -8,168 +8,273 @@
 import SwiftUI
 
 struct PackagesView: View {
+  
+  @State private var selectedTab: PackageTab = .MomAndBaby
+  
+  enum PackageTab {
+    case MomAndBaby
+    case MomOnly
+    case AddOn
+  }
+  
+  var body: some View {
     
-    @State private var selectedTab: PackageTab = .MomAndBaby
-    
-    enum PackageTab {
-        case MomAndBaby
-        case MomOnly
-        case AddOn
-    }
-    
-    var body: some View {
-            NavigationStack {
-              VStack {
-                  
-                  mainHeaderView()
-                  
-          // Currently MainHeaderView only works in the ForYouView and i think it has something to do with there not being a navigationStack when i am calling mainHeaderView into other views
-                  
-                  Text("Explore our Packages")
-                      .font(.system(size: 24))
-                      .fontWeight(.medium)
-                  
-                  PromotionalImageView(imageName: "PackagesPromo", imagePromo: "Join today for 20% off your first purchase", actionButton: true)
-                  
-                  HStack(spacing: 35) {
-                      PackagesTabStyle(tabPicture: "PackageTab1", tabTitle: "Mom+Baby", tab: .MomAndBaby, selectedTab: $selectedTab)
-                      PackagesTabStyle(tabPicture: "PackageTab2", tabTitle: "Just Mom", tab: .MomOnly, selectedTab: $selectedTab)
-                      PackagesTabStyle(tabPicture: "PackageTab3", tabTitle: "Add On's", tab: .AddOn, selectedTab: $selectedTab)
-                  }
-                  .padding(.all , 10)
-                  
-                  contentViewForSelectedTab()
-                  
-              }
-          }
-            }
+    NavigationStack {
+      
+      VStack {
         
-        @ViewBuilder func contentViewForSelectedTab() -> some View {
-            switch selectedTab {
-            case .MomAndBaby:
-                MomAndBabyView()
-            case .MomOnly:
-                JustMomView()
-            case .AddOn:
-                AddOnView()
-            }
+        MainHeaderView()
+        
+        Text("Explore our Packages")
+          .font(.system(size: 24))
+          .fontWeight(.medium)
+        
+        PromotionalImageView(
+          imageName: "PackagesPromo",
+          imagePromo: "Join today for 20% off your first purchase",
+          actionButton: true)
+        
+        HStack(spacing: 35) {
+          
+          PackagesTabStyle(
+            tabPicture: "PackageTab1",
+            tabTitle: "Mom+Baby",
+            tab: .MomAndBaby,
+            selectedTab: $selectedTab)
+          
+          PackagesTabStyle(
+            tabPicture: "PackageTab2",
+            tabTitle: "Just Mom",
+            tab: .MomOnly,
+            selectedTab: $selectedTab)
+          
+          PackagesTabStyle(
+            tabPicture: "PackageTab3",
+            tabTitle: "Add On's",
+            tab: .AddOn,
+            selectedTab: $selectedTab)
+          
         }
+        .padding(.all , 10)
         
+        contentViewForSelectedTab()
+        
+      }
+    }
+  }
+  
+  @ViewBuilder func contentViewForSelectedTab() -> some View {
+    
+    switch selectedTab {
+      
+    case .MomAndBaby:
+      MomAndBabyView()
+      
+    case .MomOnly:
+      JustMomView()
+      
+    case .AddOn:
+      AddOnView()
+      
+    }
+  }
 }
 
 struct PackagesTabStyle : View {
+  
+  var tabPicture : String
+  var tabTitle : String
+  let tab: PackagesView.PackageTab
+  
+  @Binding var selectedTab: PackagesView.PackageTab
+  
+  var body : some View {
     
-    var tabPicture : String
-    var tabTitle : String
-    let tab: PackagesView.PackageTab
-    
-    @Binding var selectedTab: PackagesView.PackageTab
-    
-    var body : some View {
+    Button {
+      
+      selectedTab = tab
+      
+    } label: {
+      
+      VStack{
         
-        Button(action: {
-            selectedTab = tab
-        }, label: {
-            
-            VStack{
-                Image(tabPicture)
-                    .clipShape(Circle())
-                    .frame(width: 75,height: 75)
-                Text(tabTitle)
-                    .foregroundStyle(Color.black)
-                    .font(.system(size: 13))
-                    .fontWeight(.medium)
-            }
-            
-        })
+        Image(tabPicture)
+          .clipShape(Circle())
+          .frame(width: 75,height: 75)
         
+        Text(tabTitle)
+          .foregroundStyle(Color.black)
+          .font(.system(size: 13))
+          .fontWeight(.medium)
+        
+      }
     }
+  }
 }
 
-// below are the views for the tab bar i made all pretty much the same
+// below are the views for the tabbar i made all pretty much the same
 
 struct MomAndBabyView : View{
-    var body : some View {
+  
+  var body : some View {
+    
+    ScrollView(.vertical) {
+      
+      HStack {
+        Text("Mom & Baby Packages")
+          .padding(.leading)
+          .padding(.top)
+          .font(.system(size: 21))
+          .fontWeight(.medium)
         
-        ScrollView (.vertical) {
-            HStack {
-                Text("Mom & Baby Packages")
-                    .padding(.leading)
-                    .padding(.top)
-                    .font(.system(size: 21))
-                    .fontWeight(.medium)
-                Spacer()
-            }
-            
-            HStack {
-                ElementView(elementName: "Package", elementDescription: "description description description description description description description description")
-                ElementView(elementName: "Package", elementDescription: "description description description description description description description description")
-            }
-            
-            HStack {
-                ElementView(elementName: "Package", elementDescription: "description description description description description description description description")
-                ElementView(elementName: "Package", elementDescription: "description description description description description description description description")
-            }
-        }
+        Spacer()
         
+      }
+      
+      HStack {
+        
+        GridElementView(
+          elementName: "Package",
+          elementDescription: 
+            "description description description description description description description description"
+        )
+        
+        GridElementView(
+          elementName: "Package",
+          elementDescription: 
+            "description description description description description description description description"
+        )
+        
+      }
+      
+      HStack {
+        
+        GridElementView(
+          elementName: "Package",
+          elementDescription: 
+            "description description description description description description description description"
+        )
+        
+        GridElementView(
+          elementName: "Package",
+          elementDescription: 
+            "description description description description description description description description"
+        )
+        
+      }
     }
+    
+  }
 }
 
 struct JustMomView : View{
-    var body : some View {
+  
+  var body : some View {
+    
+    ScrollView(.vertical) {
+      
+      HStack {
         
-        ScrollView (.vertical) {
-            HStack {
-                Text("Mom Only Packages")
-                    .padding(.leading)
-                    .padding(.top)
-                    .font(.system(size: 21))
-                    .fontWeight(.medium)
-                Spacer()
-            }
-            
-            HStack {
-                ElementView(elementName: "Package", elementDescription: "description description description description description description description description")
-                ElementView(elementName: "Package", elementDescription: "description description description description description description description description")
-            }
-            
-            HStack {
-                ElementView(elementName: "Package", elementDescription: "description description description description description description description description")
-                ElementView(elementName: "Package", elementDescription: "description description description description description description description description")
-            }
-        }
+        Text("Mom Only Packages")
+          .padding(.leading)
+          .padding(.top)
+          .font(.system(size: 21))
+          .fontWeight(.medium)
         
+        Spacer()
+        
+      }
+      
+      HStack {
+        
+        GridElementView(
+          elementName: "Package",
+          elementDescription: 
+            "description description description description description description description description"
+        )
+        
+        GridElementView(
+          elementName: "Package",
+          elementDescription: 
+            "description description description description description description description description"
+        )
+        
+      }
+      
+      HStack {
+        
+        GridElementView(
+          elementName: "Package",
+          elementDescription: 
+            "description description description description description description description description"
+        )
+        
+        GridElementView(
+          elementName: "Package",
+          elementDescription: 
+            "description description description description description description description description"
+        )
+        
+      }
     }
+    
+  }
 }
 
 struct AddOnView : View {
-    var body : some View {
+  
+  var body : some View {
+    
+    ScrollView(.vertical) {
+      
+      HStack {
         
-        ScrollView (.vertical) {
-            HStack {
-                Text("Add On's")
-                    .padding(.leading)
-                    .padding(.top)
-                    .font(.system(size: 21))
-                    .fontWeight(.medium)
-                Spacer()
-            }
-            
-            HStack {
-                ElementView(elementName: "Package", elementDescription: "description description description description description description description description")
-                ElementView(elementName: "Package", elementDescription: "description description description description description description description description")
-            }
-            
-            HStack {
-                ElementView(elementName: "Package", elementDescription: "description description description description description description description description")
-                ElementView(elementName: "Package", elementDescription: "description description description description description description description description")
-            }
-        }
+        Text("Add On's")
+          .padding(.leading)
+          .padding(.top)
+          .font(.system(size: 21))
+          .fontWeight(.medium)
         
+        Spacer()
+        
+      }
+      
+      HStack {
+        
+        GridElementView(
+          elementName: "Package",
+          elementDescription: 
+            "description description description description description description description description"
+        )
+        
+        GridElementView(
+          elementName: "Package",
+          elementDescription: 
+            "description description description description description description description description"
+        )
+        
+      }
+      
+      HStack {
+        
+        GridElementView(
+          elementName: "Package",
+          elementDescription: 
+            "description description description description description description description description"
+        )
+        
+        GridElementView(
+          elementName: "Package",
+          elementDescription: 
+            "description description description description description description description description"
+        )
+      }
     }
+    
+  }
 }
 
 #Preview {
-    PackagesView()
+  PackagesView()
 }
 

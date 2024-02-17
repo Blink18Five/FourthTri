@@ -8,12 +8,15 @@
 import SwiftUI
 
 struct AchievementsView: View {
-    @State private var name: String = "Leah Smith"
-    @State private var email: String = "leahsmith02@gmail.com"
+  
+  @State private var name: String = "Leah Smith"
+  @State private var email: String = "leahsmith02@gmail.com"
+  
+  var body: some View {
     
-    var body: some View {
-        ProfileHeaderView(name: name, email: email)
-    }
+    ProfileHeaderView(name: name, email: email)
+    
+  }
 }
 
 #Preview {
