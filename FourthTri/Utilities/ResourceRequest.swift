@@ -7,8 +7,10 @@
 
 import Foundation
 
+let apiHostname = "http://localhost:8080"
+
 struct ResourceRequest<ResourceType> where ResourceType: Codable {
-  let baseURL = "https://localhost:8080/api/"
+  let baseURL = "\(apiHostname)/api/"
   let resourceURL: URL
   
   init(resourcePath: String) {

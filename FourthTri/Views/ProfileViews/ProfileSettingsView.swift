@@ -8,160 +8,277 @@
 import SwiftUI
 
 struct ProfileSettingsView: View {
+  
+  @State var nameInput : String = ""
+  @State var usernameInput : String = ""
+  @State var pronounInput : String = ""
+  
+  @State var emergencyNameInput : String = ""
+  @State var emergencyPhoneInput : String = ""
+  
+  var body: some View {
     
-    @State var nameInput : String = ""
-    @State var usernameInput : String = ""
-    @State var pronounInput : String = ""
-    @State var passwordInput : String = ""
-    @State var emergencyNameInput : String = ""
-    @State var emergencyPhoneInput : String = ""
-    
-    var body: some View {
+    VStack {
+      
+      Spacer()
+      
+      ProfilePicture(showEdit: true)
+        .padding()
+      
+      
+      Section {
         
-        VStack {
-            
-            ProfilePicture(showEdit: true)
-                .padding()
-            
-            Group {
-                InputSettingsView(inputTitle: "Name", inputFieldDescription: "Name", textInput: $nameInput, isHidden: false)
-                InputSettingsView(inputTitle: "Username", inputFieldDescription: "Username", textInput: $usernameInput, isHidden: false)
-                InputSettingsView(inputTitle: "Pronouns", inputFieldDescription: "Pronouns", textInput: $pronounInput, isHidden: false)
-                InputSettingsView(inputTitle: "Password", inputFieldDescription: "Password", textInput: $passwordInput, isHidden: true)
-            }
-            
-            HStack {
-                Text("Emergency Contact")
-                    .padding()
-                    .bold()
-                    .font(.system(size: 18))
-                Spacer()
-            }
-            
-            InputSettingsView(inputTitle: "Name", inputFieldDescription: "Name", textInput: $emergencyNameInput, isHidden: false)
-                .textContentType(.familyName)
-            InputSettingsView(inputTitle: "Phone Number #", inputFieldDescription: "Phone Number #", textInput: $emergencyPhoneInput, isHidden: false)
-                .textContentType(.telephoneNumber)
+        VStack(alignment: .leading) {
+          InputSettingsView(
+            textInput: $nameInput,
+            inputTitle: "Name",
+            inputFieldDescription: "Name",
+            isHidden: false)
+          .padding(.top, 10)
+          
+          InputSettingsView(
+            textInput: $usernameInput,
+            inputTitle: "Username",
+            inputFieldDescription: "Username",
+            isHidden: false)
+          
+          InputSettingsView(
+            textInput: $pronounInput,
+            inputTitle: "Pronouns",
+            inputFieldDescription: "Pronouns",
+            isHidden: false)
         }
         
+      } header: {
+      
+        VStack(spacing: 5) {
+          
+          HStack {
+            Text("User Information")
+              .bold()
+              .font(.title2)
+            Spacer()
+          }
+          .padding([.top, .leading])
+          
+          Divider()
+        }
+        .padding(.top)
+      }
+      
+      Section {
+        
+        Group {
+          InputSettingsView(
+            textInput: $emergencyNameInput,
+            inputTitle: "Name",
+            inputFieldDescription: "Name",
+            isHidden: false
+          )
+          .textContentType(.familyName)
+          .padding(.top, 10)
+          
+          InputSettingsView(
+            textInput: $emergencyPhoneInput,
+            inputTitle: "Phone Number #",
+            inputFieldDescription: "Phone Number #",
+            isHidden: false
+          )
+          .textContentType(.telephoneNumber)
+        }
+        
+      } header: {
+        
+        VStack(spacing: 5) {
+          
+          HStack {
+            Text("Emergency Contact")
+              .bold()
+              .font(.title2)
+            Spacer()
+          }
+          .padding([.leading, .top])
+          
+          Divider()
+        }
+        .padding(.top)
+      }
+      
+      Spacer()
     }
+  }
 }
+
 
 
 struct InputSettingsView : View {
+  
+  @Binding var textInput : String
+  
+  var inputTitle : String
+  var inputFieldDescription : String
+  
+  var isHidden : Bool
+  
+  var body : some View {
     
-    var inputTitle : String
-    var inputFieldDescription : String
-    @Binding var textInput : String
-    var isHidden : Bool
-    
-    var body : some View {
+    HStack{
+      
+      if !isHidden {
         
-        HStack{
-            //Text(inputTitle)
-            
-            if !isHidden {
-              CustomTextFieldView(placeholder: inputFieldDescription, textColor: .gray, text: $textInput, widthMultiplier: 1, heightMultiplier: 1)
-            } else {
-                CustomSecureFieldView(placeholder: inputFieldDescription, textColor: .gray, text: $textInput, widthMultiplier: 1, heightMultiplier: 1, hidden: isHidden)
-            }
-            
-                
-                
-        }
-        .padding(.horizontal)
-        .padding(.vertical, 8)
+        CustomTextFieldView(
+          text: $textInput, 
+          placeholder: inputFieldDescription,
+          textColor: .gray,
+          widthMultiplier: 1,
+          heightMultiplier: 1)
         
+      } else {
+        
+        CustomSecureFieldView(
+          hidden: isHidden,
+          text: $textInput,
+          placeholder: inputFieldDescription,
+          textColor: .gray,
+          widthMultiplier: 1,
+          heightMultiplier: 1
+        )
+        
+      }
+      
     }
+    .padding(.horizontal)
+//    .padding(.vertical, 8)
+    
+  }
 }
 
 struct CustomTextFieldView : View {
+  
+  @Binding var text : String
+  
+  var placeholder : String
+  
+  var textColor : Color
+  
+  var widthMultiplier : CGFloat
+  var heightMultiplier : CGFloat
+  
+  var body: some View {
     
-    var placeholder : String
-    var textColor : Color
-    @Binding var text : String
-    var widthMultiplier : CGFloat
-    var heightMultiplier : CGFloat
-    
-    var body: some View {
-        GeometryReader { geometry in
-        ZStack(alignment: .leading) {
-            RoundedRectangle(cornerRadius: 10)
-                .stroke(Color.forYouGray1, lineWidth: 1.5)
-                .frame(width: geometry.size.width * widthMultiplier , height: geometry.size.height * heightMultiplier)
-            
-            if text.isEmpty {
-                Text(placeholder)
-                    .foregroundColor(textColor)
-                    .padding(.horizontal, 10)
-            }
-            
-                TextField("", text: $text)
-                    .foregroundColor(.black)
-                    .padding(.horizontal, 10)
-            }
-            
-        }
-        .frame(height: 41)
+    GeometryReader { geometry in
+      
+      VStack {
         
+/*
+        RoundedRectangle(cornerRadius: 10)
+          .stroke(Color.forYouGray1, lineWidth: 1.5)
+          .frame(
+            width: geometry.size.width * widthMultiplier,
+            height: geometry.size.height * heightMultiplier
+          )
+         
+        if text.isEmpty {
+          
+          Text(placeholder)
+            .foregroundColor(textColor)
+            .padding(.horizontal, 10)
+          
+        }
+         
+*/
+        
+        TextField(placeholder, text: $text)
+          .foregroundColor(.black)
+          .padding(.horizontal, 10)
+        
+        Divider()
+        
+      }
     }
+    .frame(height: 41)
+    
+  }
 }
 
 struct CustomSecureFieldView : View {
+  
+  @State var hidden : Bool
+  
+  @Binding var text : String
+  
+  var placeholder : String
+  
+  var textColor : Color
+  
+  var widthMultiplier : CGFloat
+  var heightMultiplier : CGFloat
+  
+  
+  var body: some View {
     
-    var placeholder : String
-    var textColor : Color
-    @Binding var text : String
-    var widthMultiplier : CGFloat
-    var heightMultiplier : CGFloat
-    @State var hidden : Bool
-    
-    var body: some View {
+    GeometryReader { geometry in
+      
+      ZStack(alignment: .leading) {
         
-        GeometryReader { geometry in
-        ZStack(alignment: .leading) {
-            RoundedRectangle(cornerRadius: 10)
-                .stroke(Color.forYouGray1, lineWidth: 1.5)
-                .frame(width: geometry.size.width * widthMultiplier , height: geometry.size.height * heightMultiplier)
-            
-            if text.isEmpty {
-                Text(placeholder)
-                    .foregroundColor(textColor)
-                    .padding(.horizontal, 10)
-            }
-            
-            if hidden {
-                SecureField("", text: $text)
-                    .foregroundColor(.black)
-                    .padding(.horizontal, 10)
-            } else {
-                TextField("", text: $text)
-                    .foregroundColor(.black)
-                    .padding(.horizontal, 10)
-            }
-            
-            HStack {
-                Spacer()
-                
-                Button(action: {
-                    self.hidden.toggle()
-                }, label: {
-                    Image(systemName: hidden ? "eye.slash" : "eye.fill")
-                })
-                .padding(.horizontal)
-                
-            }
-            
-        }
-            
-        }
-        .frame(height: 41)
+        RoundedRectangle(cornerRadius: 10)
+          .stroke(Color.forYouGray1, lineWidth: 1.5)
+          .frame(
+            width: geometry.size.width * widthMultiplier,
+            height: geometry.size.height * heightMultiplier
+          )
         
+        if text.isEmpty {
+          
+          Text(placeholder)
+            .foregroundColor(textColor)
+            .padding(.horizontal, 10)
+          
+        }
+        
+        if hidden {
+          
+          SecureField("", text: $text)
+            .foregroundColor(.black)
+            .padding(.horizontal, 10)
+          
+        } else {
+          
+          TextField("", text: $text)
+            .foregroundColor(.black)
+            .padding(.horizontal, 10)
+          
+        }
+        
+        HStack {
+          
+          Spacer()
+          
+          Button {
+            self.hidden.toggle()
+          } label: {
+            Image( systemName: hidden ? "eye.slash" : "eye.fill")
+          }
+          .padding(.horizontal)
+          
+        }
+      }
     }
+    .frame(height: 41)
+    
+  }
 }
 
 
 
 #Preview {
-    ProfileSettingsView(nameInput: "", usernameInput: "", pronounInput: "", passwordInput: "", emergencyNameInput: "", emergencyPhoneInput: "")
+  
+  ProfileSettingsView(
+    nameInput: "",
+    usernameInput: "",
+    pronounInput: "",
+    emergencyNameInput: "",
+    emergencyPhoneInput: ""
+  )
+  
 }

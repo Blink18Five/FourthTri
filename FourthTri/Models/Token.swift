@@ -7,8 +7,11 @@
 
 import Foundation
 
-protocol Class {
-    var date: Date { get }
-    var name: String { get }
-    var description: String { get }
+final class Token: Codable {
+  var id: UUID?
+  var value: String
+  
+  init(value: String) {
+    self.value = value
+  }
 }

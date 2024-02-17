@@ -8,19 +8,29 @@
 import SwiftUI
 
 struct EventsView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+  
+  var body: some View {
+    
+    Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+    
+  }
 }
 
 struct FeaturedEventsView: View {
-    var body: some View {
-        FeaturedScrollView(element: "Events", elementName: "Event Name", elementDescription:  "description description description description description description description description") {
-            EventsView()
-        }
+  
+  var body: some View {
+    
+    FeaturedScrollView(
+      element: "Events",
+      elementName: "Event Name",
+      elementDescription:  
+        "description description description description description description description description"
+    ) {
+      EventsView()
     }
+  }
 }
 
 #Preview {
-    FeaturedEventsView()
+  FeaturedEventsView()
 }
